@@ -1,25 +1,25 @@
 package me.devillord.tixirpg;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.Color;
-import javax.swing.JSeparator;
-import javax.swing.JButton;
+
+import me.devillord.tixirpg.item.Items;
 
 public class Main extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JPanel layout2,
@@ -28,6 +28,147 @@ public class Main extends JFrame {
 				   inventoryLayout,
 				   fightingLayout,
 				   shopLayout;
+	
+	/* Holy Study */
+	private Items HOLY_STURDY_SWORD,
+				  HOLY_STURDY_CROSSBOW,
+				  HOLY_STURDY_BATTLEAXE,
+				  HOLY_STURDY_ARMOR,
+				  HOLY_STURDY_BOOTS,
+				  HOLY_STURDY_HELM,
+				  HOLY_STURDY_LEGGING,
+				  HOLY_STURDY_GLOVES,
+				  HOLY_STURDY_RING,
+				  HOLY_STURDY_EARRING,
+				  HOLY_STURDY_ORNAMENT,
+				  HOLY_STURDY_CLOAK,
+				  HOLY_STURDY_AMULET;
+	
+	private Items STURDY_SWORD,
+				  STURDY_CROSSBOW,
+				  STURDY_BATTLEAXE,
+				  STURDY_ARMOR,
+				  STURDY_BOOTS,
+				  STURDY_HELM,
+				  STURDY_LEGGING,
+				  STURDY_GLOVES,
+				  STURDY_RING,
+				  STURDY_EARRING,
+				  STURDY_ORNAMENT,
+				  STURDY_CLOAK,
+				  STURDY_AMULET;
+	
+	private Items SEVENTH_KNIGHT_SWORD,
+				  SEVENTH_KNIGHT_CROSSBOW,
+				  SEVENTH_KNIGHT_BATTLEAXE,
+				  SEVENTH_KNIGHT_ARMOR,
+				  SEVENTH_KNIGHT_BOOTS,
+				  SEVENTH_KNIGHTHELM,
+				  SEVENTH_KNIGHT_LEGGING,
+				  SEVENTH_KNIGHT_GLOVES,
+				  SEVENTH_KNIGHT_RING,
+				  SEVENTH_KNIGHT_EARRING,
+				  SEVENTH_KNIGHT_ORNAMENT,
+				  SEVENTH_KNIGHT_CLOAK,
+				  SEVENTH_KNIGHT_AMULET;
+	
+	private Items WOODEN_SWORD,
+				  WOODEN_CROSSBOW,
+				  WOODEN_BATTLEAXE,
+				  WOODEN_ARMOR,
+				  WOODEN_BOOTS,
+				  WOODEN_HELM,
+				  WOODEN_LEGGING,
+				  WOODEN_GLOVES,
+				  WOODEN_RING,
+				  WOODEN_EARRING,
+				  WOODEN_ORNAMENT,
+				  WOODEN_CLOAK,
+				  WOODEN_AMULET;
+	
+	private Items STONE_SWORD,
+				  STONE_CROSSBOW,
+				  STONE_BATTLEAXE,
+				  STONE_ARMOR,
+				  STONE_BOOTS,
+				  STONE_HELM,
+				  STONE_LEGGING,
+				  STONE_GLOVES,
+				  STONE_RING,
+				  STONE_EARRING,
+				  STONE_ORNAMENT,
+				  STONE_CLOAK,
+				  STONE_AMULET;
+	
+	private Items IRON_SWORD,
+				  IRON_CROSSBOW,
+				  IRON_BATTLEAXE,
+				  IRON_ARMOR,
+				  IRON_BOOTS,
+				  IRON_HELM,
+				  IRON_LEGGING,
+				  IRON_GLOVES,
+				  IRON_RING,
+				  IRON_EARRING,
+				  IRON_ORNAMENT,
+				  IRON_CLOAK,
+				  IRON_AMULET;
+	
+	private Items DIAMOND_SWORD,
+				  DIAMOND_CROSSBOW,
+				  DIAMOND_BATTLEAXE,
+				  DIAMOND_ARMOR,
+				  DIAMOND_BOOTS,
+				  DIAMOND_HELM,
+				  DIAMOND_LEGGING,
+				  DIAMOND_GLOVES,
+				  DIAMOND_RING,
+				  DIAMOND_EARRING,
+				  DIAMOND_ORNAMENT,
+				  DIAMOND_CLOAK,
+				  DIAMOND_AMULET;
+	
+	private Items VENOM_SWORD,
+				  VENOM_CROSSBOW,
+				  VENOM_BATTLEAXE,
+				  VENOM_ARMOR,
+				  VENOM_BOOTS,
+				  VENOM_HELM,
+				  VENOM_LEGGING,
+				  VENOM_GLOVES,
+				  VENOM_RING,
+				  VENOM_EARRING,
+				  VENOM_ORNAMENT,
+				  VENOM_CLOAK,
+				  VENOM_AMULET;
+	
+	private Items ANCIENT_ESPADA_SWORD,
+				  ANCIENT_ESPADA_CROSSBOW,
+				  ANCIENT_ESPADA_BATTLEAXE,
+				  ANCIENT_ESPADA_ARMOR,
+				  ANCIENT_ESPADA_BOOTS,
+				  ANCIENT_ESPADA_HELM,
+				  ANCIENT_ESPADA_LEGGING,
+				  ANCIENT_ESPADA_GLOVES,
+				  ANCIENT_ESPADA_RING,
+				  ANCIENT_ESPADA_EARRING,
+				  ANCIENT_ESPADA_ORNAMENT,
+				  ANCIENT_ESPADA_CLOAK,
+				  ANCIENT_ESPADA_AMULET;
+	
+	private Items HARMONY_SWORD,
+				  HARMONY_CROSSBOW,
+				  HARMONY_BATTLEAXE,
+				  HARMONY_ARMOR,
+				  HARMONY_BOOTS,
+				  HARMONY_HELM,
+				  HARMONY_LEGGING,
+				  HARMONY_GLOVES,
+				  HARMONY_RING,
+				  HARMONY_EARRING,
+				  HARMONY_ORNAMENT,
+				  HARMONY_CLOAK,
+				  HARMONY_AMULET;
 
 	/**
 	 * Launch the application.
@@ -52,6 +193,49 @@ public class Main extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
+		//Itemname,dur,dmg,luck,critrate,eva,critdmg,def,category
+		HOLY_STURDY_SWORD = new Items("Holy Sturdy Sword",1288,1022,0,3,0,0,0,"Weapon");
+		HOLY_STURDY_CROSSBOW = new Items("Holy Sturdy Crossbow",1288,1888,0,6,0,0,0,"Weapon");
+		HOLY_STURDY_BATTLEAXE = new Items("Holy Sturdy Battleaxe",1288,1240,0,2,0,0,0,"Weapon");
+		HOLY_STURDY_ARMOR = new Items("Holy Sturdy Armor",1500,0,0,0,1,0,62,"Armor");
+		HOLY_STURDY_BOOTS = new Items("Holy Sturdy Boots",800,0,0,0,1,0,38,"Boots");
+		HOLY_STURDY_HELM = new Items("Holy Sturdy Helmet",1024,0,0,0,1,0,52,"Helm");
+		HOLY_STURDY_LEGGING = new Items("Holy Sturdy Legging",1250,0,0,0,1,0,46,"Legg");
+		HOLY_STURDY_GLOVES = new Items("Holy Sturdy Glove",600,0,0,0,0,0,34,"Gloves");
+		HOLY_STURDY_RING = new Items("Holy Sturdy Ring",250,0,0,6,0,0,12,"Ring");
+		HOLY_STURDY_EARRING = new Items("Holy Sturdy Earring",238,0,8,0,0,0,0,"Earring");
+		HOLY_STURDY_ORNAMENT = new Items("Holy Sturdy Ornament",192,0,16,0,3,0,12,"Ornament");
+		HOLY_STURDY_CLOAK = new Items("Holy Sturdy Cloak",900,0,0,10,7,0,26,"Cloak");
+		HOLY_STURDY_AMULET = new Items("Holy Sturdy Amulet",122,0,24,0,0,0,0,"Amulet");
+		
+		HARMONY_SWORD = new Items("Harmony Sword",0,0,0,0,0,0,0,"Weapon");
+		HARMONY_CROSSBOW = new Items("Harmony Crossbow",0,0,0,0,0,0,0,"Weapon");
+		HARMONY_BATTLEAXE = new Items("Harmony Battleaxe",0,0,0,0,0,0,0,"Weapon");
+		HARMONY_ARMOR = new Items("Harmony Armor",0,0,0,0,0,0,0,"Armor");
+		HARMONY_BOOTS = new Items("Harmony Boots",0,0,0,0,0,0,0,"Boots");
+		HARMONY_HELM = new Items("Harmony Helmet",0,0,0,0,0,0,0,"Helm");
+		HARMONY_LEGGING = new Items("Harmony Legging",0,0,0,0,0,0,0,"Legg");
+		HARMONY_GLOVES = new Items("Harmony Glove",0,0,0,0,0,0,0,"Gloves");
+		HARMONY_RING = new Items("Harmony Ring",0,0,0,0,0,0,0,"Ring");
+		HARMONY_EARRING = new Items("Harmony Earring",0,0,0,0,0,0,0,"Earring");
+		HARMONY_ORNAMENT = new Items("Harmony Ornament",0,0,0,0,0,0,0,"Ornament");
+		HARMONY_CLOAK = new Items("Harmony Cloak",0,0,0,0,0,0,0,"Cloak");
+		HARMONY_AMULET = new Items("Harmony Amulet",0,0,0,0,0,0,0,"Amulet");
+		
+		ANCIENT_ESPADA_SWORD = new Items("Ancient Espada Sword",0,0,0,0,0,0,0,"Weapon");
+		ANCIENT_ESPADA_CROSSBOW = new Items("Ancient Espada Crossbow",0,0,0,0,0,0,0,"Weapon");
+		ANCIENT_ESPADA_BATTLEAXE = new Items("Ancient Espada Battleaxe",0,0,0,0,0,0,0,"Weapon");
+		ANCIENT_ESPADA_ARMOR = new Items("Ancient Espada Armor",0,0,0,0,0,0,0,"Armor");
+		ANCIENT_ESPADA_BOOTS = new Items("Ancient Espada Boots",0,0,0,0,0,0,0,"Boots");
+		ANCIENT_ESPADA_HELM = new Items("Ancient Espada Helmet",0,0,0,0,0,0,0,"Helm");
+		ANCIENT_ESPADA_LEGGING = new Items("Ancient Espada Legging",0,0,0,0,0,0,0,"Legg");
+		ANCIENT_ESPADA_GLOVES = new Items("Ancient Espada Glove",0,0,0,0,0,0,0,"Gloves");
+		ANCIENT_ESPADA_RING = new Items("Ancient Espada Ring",0,0,0,0,0,0,0,"Ring");
+		ANCIENT_ESPADA_EARRING = new Items("Ancient Espada Earring",0,0,0,0,0,0,0,"Earring");
+		ANCIENT_ESPADA_ORNAMENT = new Items("Ancient Espada Ornament",0,0,0,0,0,0,0,"Ornament");
+		ANCIENT_ESPADA_CLOAK = new Items("Ancient Espada Cloak",0,0,0,0,0,0,0,"Cloak");
+		ANCIENT_ESPADA_AMULET = new Items("Ancient Espada Amulet",0,0,0,0,0,0,0,"Amulet");
+		
 		contentPane = new JPanel();
 		layout2 = new JPanel();
 		layout3 = new JPanel();
@@ -66,7 +250,6 @@ public class Main extends JFrame {
 		layout2.setLayout(null);
 		layout3.setLayout(null);
 		playLayout.setLayout(null);
-		inventoryLayout.setLayout(null);
 		shopLayout.setLayout(null);
 		fightingLayout.setLayout(null);
 		
@@ -225,6 +408,8 @@ public class Main extends JFrame {
 		lblMainMenu.setBounds(331, 234, 103, 17);
 		playLayout.add(lblMainMenu);
 		contentPane.add(inventoryLayout,"inven");
+		inventoryLayout.setLayout(new GridLayout(0,4));
+		inventoryLayout.setBorder(new EmptyBorder(5, 10, 5, 10));
 		contentPane.add(fightingLayout,"fight");
 		contentPane.add(shopLayout,"shop");
 		
